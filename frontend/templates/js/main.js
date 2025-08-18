@@ -5,5 +5,7 @@ if (clickButton) {
 }
 
 function showMessage() {
-    fetch("http://localhost:8080")
+   fetch("http://localhost:8080/", { mode: 'cors' })
+   .then(response => response.json())
+   .then(data => console.log(data))
 }

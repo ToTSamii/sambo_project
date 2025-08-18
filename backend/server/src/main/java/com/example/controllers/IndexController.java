@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class IndexController {
     private static IndexService service = new IndexService();
 
     @GetMapping
+    @CrossOrigin(origins = "null")
     public List<Priem> get() {
         return service.getIndex();
     }
