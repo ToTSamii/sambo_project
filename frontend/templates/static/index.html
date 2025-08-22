@@ -55,9 +55,16 @@
     
     <div class="subtitle">Приёмы</div>
 
-    <button id="add_priem">Добавить приём</button>
+    <button class="btn" id="add_priem">Добавить приём</button>
+    <button class="btn" id="delete_priem" onclick="window.myDialog.show()">Удалить</button>
+
+    <dialog id="myDialog">
+        <input type="text" id="dialog_id">
+        <button id="delete_ok" onclick="window.myDialog.close()">OK</button>
+    </dialog>
 
     <div id="columns"></div>
+
 </body>
 <script src="../js/main.js"></script>
 </html>

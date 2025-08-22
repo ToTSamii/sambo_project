@@ -27,16 +27,19 @@ public class IndexController {
     }
 
     @PostMapping
+    @CrossOrigin(origins = "null")
     public void post(@RequestBody Priem priem) {
         service.postIndex(priem);
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin(origins = "null")
     public void delete(@PathVariable("id") int id) {
         service.deleteIndex(id);
     }
 
     @PutMapping("/{id}")
+    @CrossOrigin(origins = "null")
     public void put(@PathVariable("id") int id, @RequestBody Priem priem) {
         service.putIndex(id, priem);
     }

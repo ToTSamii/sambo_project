@@ -15,6 +15,7 @@ import com.example.models.Priem;
 @Repository
 public class IndexRepository {
 
+    private static int id = 0;
     private static final String URL = "jdbc:postgresql://localhost:5432/test";
     private static final String USER = "test";
     private static final String PASSWORD = "test";
@@ -32,7 +33,9 @@ public class IndexRepository {
                 Priem priem = new Priem();
                 priem.setId(resultSet.getInt("id"));
                 priem.setName(resultSet.getString("name"));
+                priem.setCategory(resultSet.getString("category"));
                 priem.setResume(resultSet.getString("resume"));
+                priem.setExecution(resultSet.getString("execution"));
                 priem.setUrl_on_img(resultSet.getString("url_on_img"));
                 priem.setUrl_on_video(resultSet.getString("url_on_video"));
 
@@ -53,15 +56,20 @@ public class IndexRepository {
 
 
     public void postTable(Priem priem) {
+
+        id++;
+
         try {     
             //Вставка данных
             Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
             Statement statement = connection.createStatement();
 
-            String insertSQL = "INSERT INTO priems (id, name, resume, url_on_img, url_on_video) VALUES (" 
-            + Integer.toString(priem.getId())
+            String insertSQL = "INSERT INTO priems (id, name, category, resume, execution, url_on_img, url_on_video) VALUES (" 
+            + Integer.toString(id)
             + ",'" + priem.getName() + "',"
+            + "'" + priem.getCategory() + "',"
             + "'" + priem.getResume() + "',"
+            + "'" + priem.getExecution() + "',"
             + "'" + priem.getUrl_on_img() + "',"
             + "'" + priem.getUrl_on_video() + "'"
             + ")";
@@ -99,7 +107,9 @@ public class IndexRepository {
             String insertSQL = "UPDATE priems SET " + 
             "id = " + Integer.toString(id) + ", " +
             "name = " + "'" + priem.getName() + "', " +
+            "name = " + "'" + priem.getCategory() + "', " +
             "resume = " + "'" + priem.getResume() + "', " +
+            "name = " + "'" + priem.getExecution() + "', " +
             "url_on_img = " + "'" + priem.getUrl_on_img() + "', " +
             "url_on_video = " + "'" + priem.getUrl_on_video() + "' " +
             "WHERE id = " + Integer.toString(id);

@@ -59,6 +59,12 @@ body {
         .highlight {
             font-weight: bold;
         }
+
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
         
         #columns {
             display: flex;
@@ -69,3 +75,21 @@ body {
         .column {
             width: 48%;
         }
+
+.btn {
+    background-color: #e63946;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #d62828;
+}

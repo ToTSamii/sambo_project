@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление приёма самбо</title>
+    <link rel="stylesheet" href="../style/add_priem.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="sambo-logo">🥋</div>
+            <h1>Добавление приёма самбо</h1>
+        </header>
+
+        <div class="success-message" id="successMessage">
+            Приём успешно добавлен!
+        </div>
+
+        <form id="techniqueForm">
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="name">Название приёма <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="category">Категория <span class="required">*</span></label>
+                        <select id="category" name="category" required>
+                            <option value="">Выберите категорию</option>
+                            <option value="броски">Броски</option>
+                            <option value="удержания">Удержания</option>
+                            <option value="болевые">Болевые приёмы</option>
+                            <option value="удушающие">Удушающие приёмы</option>
+                            <option value="комбинации">Комбинации</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Описание приёма <span class="required">*</span></label>
+                <textarea id="description" name="description" required placeholder="Опишите технику выполнения приёма..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="execution">Техника выполнения <span class="required">*</span></label>
+                <textarea id="execution" name="execution" required placeholder="Пошаговое описание выполнения приёма..."></textarea>
+            </div>
+
+             <div class="form-group">
+                <label for="img">Ссылка на изображение (если есть)</label>
+                <input type="text" id="img" name="img" placeholder="https://youtube.com/...">
+            </div>
+
+            <div class="form-group">
+                <label for="video">Ссылка на видео (если есть)</label>
+                <input type="text" id="video" name="video" placeholder="https://youtube.com/...">
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn" id="add_button">Добавить приём</button>
+                <button type="submit" class="btn" id="back_button">Назад</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/add_priem.js"></script>
+</body>
+</html>
