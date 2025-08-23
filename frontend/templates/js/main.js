@@ -10,9 +10,12 @@ function pars(data) {
         priems_html += '<div class="column">' +
 
             '<div class="image-container">' +
+                '<div class="image-id">'+ data[i]['id'] + '</div>' +
                 '<img src="'+ data[i]['url_on_img'] +'" alt="Приём ' + data[i]['id'] + '">' +
                 '<div class="image-caption">'+ data[i]['name'] + '</div>' +
+                '<div class="image-category">'+ data[i]['category'] + '</div>' +
                 '<div class="image-resume">'+ data[i]['resume'] + '</div>' +
+                '<div class="image-execution">'+ data[i]['execution'] + '</div>' +
             '</div>' +
 
         "</div>";

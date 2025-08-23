@@ -12,13 +12,16 @@ import org.springframework.stereotype.Repository;
 
 import com.example.models.Priem;
 
+import com.example.Config;
+
+
 @Repository
 public class IndexRepository {
 
     private static int id = 0;
-    private static final String URL = "jdbc:postgresql://localhost:5432/test";
-    private static final String USER = "test";
-    private static final String PASSWORD = "test";
+    private static final String URL = Config.URL;
+    private static final String USER = Config.USER;
+    private static final String PASSWORD = Config.PASSWORD;
 
 
     public List<Priem> getTable() {

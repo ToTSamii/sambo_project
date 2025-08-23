@@ -1,4 +1,3 @@
-
 document.getElementById('techniqueForm').addEventListener('submit', function(e) {
     e.preventDefault();     
     successMessage = document.getElementById('successMessage');
